@@ -12,10 +12,13 @@ document.getElementById("").innerHTML   <br/>
 document.getElementById("").innerText  <br/>
 document.getElementById("").textContent  <br/>
 document.getElementById("").outerHTML  <br/>
+document.getElementById("").outerText  <br/>
 
 Changing Attribute <br/>
 
 document.getElementById("img1").src="images/2.jpg"; <br/>
+
+Increment / Decrement Operator <br/>
 
 ternary operator <br/>
 
