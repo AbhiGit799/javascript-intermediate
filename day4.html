@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning JavaScript 4</title>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h2
+        style="
+          background-color: blueviolet;
+          color: white;
+          text-transform: uppercase;
+        "
+      >
+        Learning JavaScript
+      </h2>
+    </div>
+
+    <p id="pId">Hello TechWorld</p>
+    <p id="pId2"><b>  Hello NanoWorld  </b></p>
+
+    <br />
+
+    <span>Hello Raj</span>
+
+    <br /> <br />
+
+    <div id="divId"> <b>Hi Team!!</b> </div>
+
+    <br />
+    <br />
+
+    <button type="button" onclick="funInnerHTML()">Inner HTML</button>
+    &nbsp;
+    <button type="button" onclick="funInnerText()">Inner Text</button>
+    &nbsp;
+    <button type="button" onclick="funTextContent()">Text Content</button>
+    &nbsp;
+    <button type="button" onclick="funOuterHTML()">Outer HTML</button>
+    &nbsp;
+    <button type="button" onclick="funOuterText()">Outer Text</button>
+
+    <br /> <br />
+    
+    <img src="images/1.jpg" alt="pic" id="img1" width="400px">
+
+    <br/>
+
+    <button type="button" onclick="changeAttr()">Change</button>
+   
+    <br/><br/>
+
+    <input type="text" id="txtName" value="Kaira"/>
+
+    <br />
+
+    <script>
+
+      function funInnerHTML() {
+        console.log(document.getElementById("pId").innerHTML);
+        console.log(document.getElementById("pId2").innerHTML); // O/P --> <b>Hello NanoWorld</b>
+
+        document.getElementsByTagName("span")[0].innerHTML =
+          document.getElementById("pId2").innerHTML;
+
+        //Note:- getElementsByTagName()  returns collection so without index code will not work.
+      }
+
+      function funInnerText() {
+        console.log(document.getElementById("pId").innerText);
+        console.log(document.getElementById("pId2").innerText);
+
+        document.getElementsByTagName("span")[0].innerHTML =
+          document.getElementById("pId2").innerText;
+
+        document.getElementsByTagName("span")[0].innerText =
+          document.getElementById("pId2").innerText;
+      }
+
+     function funTextContent()
+      {
+        console.log(document.getElementById("pId").textContent);
+        console.log(document.getElementById("pId2").textContent);
+        document.getElementsByTagName("span")[0].textContent = document.getElementById("pId2").textContent;
+          
+      }
+
+      function funOuterHTML()
+      {
+        console.log(document.getElementById("pId").outerHTML);
+        console.log(document.getElementById("pId2").outerHTML);
+      //  document.getElementById("divId").outerHTML="Hi All";
+      //  document.getElementById("divId").outerHTML = document.getElementsByTagName("span")[0].innerHTML; 
+        
+        document.getElementById("divId").outerHTML = document.getElementById("pId2").innerHTML;
+      }
+
+      function funOuterText()
+      {
+        console.log(document.getElementById("pId").outerText);
+        console.log(document.getElementById("pId2").outerText);
+        
+       // document.getElementById("pId2").outerText = "Hi Yogi"; //this will remove paragraph pId2 and put our string.
+
+       document.getElementById("pId2").innerText="Hi Poland!!";
+      
+      }
+
+      function changeAttr()
+      {
+        document.getElementById("img1").src="images/2.jpg";
+        document.getElementById("txtName").value="Sonia";
+      }
+
+
+      var A=20,B=10;
+      A++;
+
+      console.log(A);
+      A--;
+      console.log(A);
+      
+      A>B?console.log("A is greater than B"):A<B?console.log("A is less than B"):console.log("A==B");            
+
+     
+      var myName = "Om";
+
+      console.log(typeof myName);
+
+      console.log(typeof(myName)); //myName=""  give string
+
+      var myvar = null; //if we want to put object in myvar
+
+      console.log(myvar); // Output = object
+
+      var nn = {
+        id:45
+      }
+
+      console.log(typeof(nn));  // Output = Object
+
+      var arr = [10,20,30];
+
+      console.log(typeof(arr)); // Output = Object
+
+      //Array typeof = object
+
+      var fn = "Aman";
+      var ln = "Sharma";
+
+      console.log(fn.concat(' ',ln));
+
+      function fullName(firstName,lastName)
+      {
+        if( typeof firstName == 'string' && typeof lastName == 'string')
+        {
+          return firstName.concat('',lastName);
+        }
+        else
+        {
+          console.log("It is not a valid name.");
+          return "";
+        }
+      }
+
+      console.log(fullName(12355,"Kumar"));
+
+      console.log("Show log here....");
+
+      console.warn("Show warning here...");
+
+      console.error("Show error here....");
+
+      function clearAll()
+      {
+          console.clear();
+      }
+
+      function Add()
+      {
+        debugger;
+
+        var aa=10, bb=20;
+
+        // or use console.log(aa);
+        // console.log(bb);
+
+        console.log(a+b);
+      }
+
+    </script>
+
+
+    <br/><br/>
+
+    <button type="button" onclick="clearAll()">Clear Console</button>
+    &nbsp;&nbsp;
+    <button type="button" onclick="Add()">Add</button>
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
