@@ -23,9 +23,9 @@ typeof <br/>
 
 Array typeof = object <br/>
 
-console.clear(); <br/>
-console.warn  <br/>
-console.error <br/>
+console.clear() <br/>
+console.warn()  <br/>
+console.error() <br/>
 
 
 debugger; <br/>
