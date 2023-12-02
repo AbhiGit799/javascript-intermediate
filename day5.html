@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 5</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+      </div>
+
+
+    <script>
+        var age =20;
+        console.log(age);
+
+        var _age=30;
+        console.log(_age);
+
+        var $age=40;
+        console.log($age);
+
+        console.log("\n");
+
+        var zz;
+        console.log(zz);  //undefined
+
+        var agg;
+        agg=10;
+        console.log(agg);
+
+        var obj = {
+            id:1,
+            name:"Ajeet",
+            //age:undefined
+            age:23
+        }
+
+        var agt;
+        agt = typeof obj.age == 'undefined'? 0 : obj.age;
+
+        console.log(agt);
+
+        console.log("\n");
+
+        //For comparing value we write
+       // agt = obj.age == undefined? 0 : obj.age;
+
+       var at=17,name="Aman",address="Noida";
+
+       console.log(at);
+       console.log(name);
+       console.log(address);
+
+       /*
+       
+       var age =1;
+       age = 2;
+       console.log(age);   //Here, we are reassigning value to age
+       
+       var age = 4;
+       var age = 5;
+       console.log(age);  //Here, we are redeclaring age variable two times with different values 
+
+       */
+ 
+       var ay;
+       console.log(ay); //undefined
+       ay = 13;
+
+       console.log("\n");
+       
+       //console.log(by); //Error = Uncaught ReferenceError: by is not defined
+       //by=14; 
+
+      // console.log(az);  //Error =  Cannot access 'az' before initialization
+      // let az=17;
+
+
+      //************************
+
+      /*
+
+      console.log(bb);
+      var bb;
+      bb = 11;
+      
+      Here we will not get any error we simply get undefined
+      
+      */
+
+     // let bge = 10;
+     // var bge = 20;
+     // console.log(bge); //Uncaught SyntaxError: Identifier 'bge' has already been declared
+
+
+    // var cge = 10;
+    // let cge = 28;
+    // console.log(cge);  //Uncaught SyntaxError: Identifier 'cge' has already been declared 
+
+    var data = "Jim";
+    data = 16;
+    data = true;
+    data = [1,2,3];
+    console.log(data);
+
+    console.log("\n");
+
+    let dat = "Tom";
+    dat = 19;
+    dat = false;
+    dat = [11,22,33];
+    console.log(dat);
+    console.log(typeof dat); // Output : Object
+
+
+   // const dge; //Uncaught SyntaxError: Missing initializer in const declaration
+   // console.log(dge);
+
+   const fge = 159;
+   console.log(fge);
+
+   console.log("\n");
+
+ //  console.log(gge); //Uncaught ReferenceError: Cannot access 'gge' before initialization
+ //  const gge = 147;
+
+     var hge = 101;
+     function message()
+     {
+        console.log(hge);
+     }
+
+     message();
+
+     function msg(isShow)
+     {
+        if(isShow == true)
+        {
+           var myName = "AJT";
+           var age = 31;
+           console.log("My name is "+myName+" and age is "+age);
+        }
+     
+        console.log("My name is "+myName+" and age is "+age);
+    }
+
+     msg(true);
+
+     function msgg(isShow1)
+     {
+        if(isShow1 == true)
+        {
+           var myn = "Vint";
+           var mag = 32;
+           console.log("My name is "+myn+" and age is "+mag);
+        }
+     
+        console.log("My name is "+myn+" and age is "+mag); //My name is undefined and age isundefined
+    }
+
+     msgg(false);
+
+     console.log("\n");
+
+     function display(isShow2)
+     {
+        let disname = "Rajat";
+        if(isShow2 == true)
+        {
+           let disname = "Ravi";
+           let disag = 33;
+           console.log("My name is "+disname+" and age is "+disag);
+        }
+
+        console.log(disname);
+     
+       // console.log("My name is "+disname+" and age is "+disag); //Error
+       //Uncaught ReferenceError: disname is not defined at display
+     }
+
+     display(true);
+
+
+     //Note:- var is of function scope
+     //Note:- let is of block scope
+
+     console.log("\n");
+
+     function show(isShow3)
+     {
+        let mynm1 = "Chandra";
+
+        if(isShow3 == true)
+        {
+            console.log(mynm1); // Output = Chandra
+        }
+
+     }
+
+     show(true);
+
+     console.log("\n");
+
+     for(var i=1;i<=10;i++)
+     {
+
+     }
+
+     console.log(i); // Output = 11 
+
+     // Note : for(const i=1;i<=10;i++)  //Will give error, because value of i will change
+
+     console.log("\n");
+
+     const nt = ["AKK","MK"]; //No Error, because we are not reassigning the value to const variable.
+
+     nt.push("PTW");
+
+     console.log(nt);
+
+     //Note:- In case of const we can increase or decrease reference.
+
+     console.log("\n");
+
+     const obj1 ={
+        id:110,
+        name:"Rita"
+
+     };
+
+    //  obj1 = {
+    //     email:'rita12@gmail.com'   //Error
+    //  }
+
+    obj1.name="Oppo";
+    obj1.email="oppo12@gmail.com";
+
+     console.log(obj1);
+
+
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
