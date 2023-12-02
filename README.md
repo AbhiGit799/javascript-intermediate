@@ -29,3 +29,16 @@ Object.keys <br/>
 
 break and continue examples <br/>
 
+**Important Notes ** <br/>
+
+Basically of is used for Arrays.  <br/>
+Note:- Converting Object to Arrays.  <br/>
+
+// for( let l of Student) <br/>
+// { <br/>
+//     console.log(l); //day6.html:313  Uncaught TypeError: Student is not iterable <br/>
+// } <br/>
+
+
+    
+
