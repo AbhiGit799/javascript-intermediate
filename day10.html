@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 10</title>
+</head>
+<body>
+
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+      </div>
+
+      <button type="button" onclick="funNext()">Go To About Us Page</button> &nbsp; &nbsp;
+      <button type="button" onclick="funForward()">Forward</button>
+
+    <script>
+
+      function funNext()
+      {
+           window.location.href = "http://127.0.0.1:5500/about.html";
+      } 
+      
+      function funForward()
+      {
+
+        //window.history.forward();
+          window.history.go(1); // for one time forward
+          //for 2 time back -2
+     }
+      
+      //replace() not changed existing string.
+      //It replace and return new string.
+      
+      console.log("replace() examples");
+      
+      var str = "Ajeet,Chandan,Pawan,Samir";
+
+      str.replace("Chandan","Mohan");
+
+      console.log(str);  //Output = Ajeet,Chandan,Pawan,Samir
+
+      const ans = str.replace("Chandan","Mohan");
+
+      console.log(ans);  // Ajeet,Mohan,Pawan,Samir
+
+      const bns = str.replace("Chandan,Pawan","Mohan");
+
+      console.log(bns);  //Ajeet,Mohan,Samir
+
+      const cns = str.replace("Chandan,Pawan","");
+
+      console.log(cns); //Ajeet,,Samir
+
+      const dns = str.replace("Chanda","Rama");  //<-------- Chanda
+
+      console.log(dns); //Ajeet,Raman,Pawan,Samir
+
+     const ens = str.replace("Mohan","Tanu");
+     
+     console.log(ens); //Ajeet,Chandan,Pawan,Samir
+
+    var dtr = "Ajeet,Chandan,Pawan,Samir,Chandan";
+    var fns = dtr.replace("Chandan","Rita");
+    console.log(fns); //Ajeet,Rita,Pawan,Samir,Chandan {first matching will get replaced.}
+
+
+    const gns = dtr.replace(/Chandan/g,"Ankit"); //<----- Regular expression
+    console.log(gns); //Ajeet,Ankit,Pawan,Samir,Ankit           //<------- 2 times Ankit
+
+   const hns = dtr.replace(/chandan/i,"Karan"); // case insensitive  regular pattern
+   console.log(hns); //Ajeet,Karan,Pawan,Samir,Chandan
+
+   console.log("\n");
+
+   console.log("concat() examples");
+   var etr = "Hello";
+   var ftr = "Ajeet";
+   var gtr = "How are you?";
+
+   var result = etr+ftr+gtr;
+
+   console.log(result);
+
+   var result = etr+" "+ftr+" "+gtr;
+
+   console.log(result);
+
+   var result = etr.concat(ftr,gtr);
+
+   console.log(result);
+
+   var result = etr.concat(" ",ftr," ",gtr);  // multiple string in concat()
+
+   console.log(result);
+
+   console.log(etr); //Hello
+
+   console.log("\n");
+
+   console.log("Literal way");
+
+   console.log(`${etr} ${ftr} ${gtr}`);
+
+   var firstname = "Seema", lastname="Singh";
+
+   console.log(`Her name is ${firstname} ${lastname}`);
+
+   console.log("\n");
+
+   console.log("Trim() examples");
+
+   var str = "  I am   Arun       ";
+   str.trim()
+   console.log(str);  //  I am   Arun       //with space, because trim retrun new string
+
+   var result = str.trim();
+   console.log(result); //I am   Arun
+
+   var result = str.trimEnd();
+   console.log(result);
+
+   var result = str.trimStart();
+   console.log(result);
+
+   console.log("\n");
+
+   console.log("Extracting string character");
+
+   var atr = "Ajeet";
+   var result = atr.charAt(0);
+   console.log(result); //A
+
+   var btr = "Ajeet";
+   var result = btr.charCodeAt(0);
+   console.log(result); //A=65 a=97
+
+   var ctr = "Ajeet";
+   var result = ctr[2];
+   console.log(result); //e
+
+   console.log("\n");
+   console.log("Converting Arrays to String using toString() and join()");
+   var names = ['Ajeet','Chandan','Pawan','Samir'];
+
+   console.log(names);  //['Ajeet', 'Chandan', 'Pawan', 'Samir']
+
+   console.log(names.toString());  //Ajeet,Chandan,Pawan,Samir
+
+   console.log(names.join());  //Ajeet,Chandan,Pawan,Samir
+
+   console.log(names.join(' '));  //Ajeet Chandan Pawan Samir
+
+   console.log(names.join(';'));  //Ajeet;Chandan;Pawan;Samir
+
+   console.log("\n");
+
+   console.log("Deleting elements from Array");
+
+   var names1 = ['Ajeet','Chandan','Pawan','Samir'];
+
+   delete names1[2];
+
+   console.log(names1); //['Ajeet', 'Chandan', empty, 'Samir']
+
+   // delete will not remove index from array
+
+   console.log(names1.join()); //Ajeet,Chandan,,Samir
+
+   console.log("\n");
+
+   console.log("Converting String to an Array");
+
+   console.log("split()");
+
+   var qtr= "Hi Amit";
+   
+   var res = qtr.split(" ");
+
+   console.log(res);  //['Hi', 'Amit']
+
+   console.log(qtr); //Hi Amit
+
+   console.log(qtr.split(",")); // ['Hi Amit']
+
+   var res = qtr.split(""); //<----- no space
+
+   console.log(res); // ['H', 'i', ' ', 'A', 'm', 'i', 't']
+
+   for(let val of res)
+   {
+    console.log(val);
+   }
+
+   console.log("\n");
+
+   console.log("The History Object");
+
+
+
+   
+    </script>
+    
+</body>
+</html>
+
+
+
