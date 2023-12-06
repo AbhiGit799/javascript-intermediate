@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 11</title>
+</head>
+<body>
+
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+      </div>
+
+    <button type="button" onclick="funConcat()">Concat</button>
+     
+    &nbsp; &nbsp;
+
+    <button type="button" onclick="funSplice()">Splice</button>
+    
+    &nbsp; &nbsp;
+
+    <button type="button" onclick="funSlice()">Slice</button>
+    &nbsp; &nbsp;
+
+    <button type="button" onclick="funMap()">Map</button>
+
+    &nbsp; &nbsp;
+
+    <button type="button" onclick="funSort()">Sort</button>
+    
+
+    <script>
+        console.log("JavaScript Merging Arrays");
+        console.log("\n");
+
+        function funConcat()
+        {
+            var names=["Ajeet","Chandan"];
+
+            var names2 = ["Pawan","Samir"];
+
+            names.concat(names2);
+
+            console.log(names); //['Ajeet', 'Chandan']
+
+            //concat() will not change existing array
+
+            var result = names.concat(names2);
+
+            console.log(result);
+
+            console.log(names.concat(names2));
+
+            var names3 = ["Mohan"];
+
+            console.log(names.concat(names2,names3));
+
+            console.log(names.concat(names2,names3,['Arjun','Aman']));
+
+
+
+        }
+
+
+        console.log("\n");
+        console.log("Splicing an Array splice()");
+
+        function funSplice()
+        {
+
+            var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+
+            n1.splice();  //change exisiting array
+
+            console.log(n1); //['Ajeet', 'Chandan', 'Pawan', 'Samir']
+
+             n1.splice(0);
+
+             console.log(n1); // []
+
+             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+             
+             n1.splice(0,2);  // second index is delete count
+
+             console.log(n1); // ['Pawan', 'Samir']
+
+             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+             
+             n1.splice(2,1);
+
+             console.log(n1); //['Ajeet', 'Chandan', 'Samir']
+
+             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+             
+             n1.splice(2,2);
+
+             console.log(n1); //['Ajeet', 'Chandan']
+
+             console.log("\n");
+             console.log("Splice replace splice()");
+
+             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+             
+             console.log(n1); //['Ajeet', 'Chandan', 'Pawan', 'Samir']
+
+             n1.splice(0,2);
+             console.log(n1); //['Pawan', 'Samir']
+
+
+             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+             
+             n1.splice(0,2,"Ram","Mohan");
+
+             console.log(n1); //['Ram', 'Mohan', 'Pawan', 'Samir']
+
+             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+
+             n1.splice(0,0,"Raja","Sam"); //to insert at starting position
+
+             console.log(n1); // ['Raja', 'Sam', 'Ajeet', 'Chandan', 'Pawan', 'Samir']
+
+             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+
+             n1.splice(n1.length,0,"Rani","Shilpa"); //To insert at last
+
+             console.log(n1); //['Ajeet', 'Chandan', 'Pawan', 'Samir', 'Rani', 'Shilpa']
+
+
+
+
+        }
+
+        console.log("\n");
+
+        console.log("Slicing an Array");
+
+        //slice() last parameter is length
+
+        function funSlice()
+        {
+            var n1 = ["Ajeet","Chandan","Pawan","Samir"];
+            
+        
+            console.log(n1.slice()); // ['Ajeet', 'Chandan', 'Pawan', 'Samir']
+
+            console.log(n1.slice(0,2)); //['Ajeet', 'Chandan']
+        
+            console.log(n1.slice(2)); //['Pawan', 'Samir']
+
+            //slice will not change existing array.
+        
+        }
+
+        console.log("\n");
+        console.log("Map in Array");
+
+        function funMap()
+        {
+            var marks = [10,20,30,40,50];
+            var marks2 = [100,200,300,400,500];
+
+            marks.map(function myFun(value,index,array){
+
+                //value marks ke elements mile ge
+                //index par array ke index mile ge.
+                //array will hold same array as marks
+
+                console.log(value,index,array);
+           
+
+
+            })
+            
+            console.log("\n");
+
+            marks2.map(myFun2);  // no function () here
+
+            function myFun2(value,index,array){
+            console.log(value,index,array);
+            }
+            
+            console.log("\n");
+        
+            marks.map(function fun(v,i,arr){
+                console.log(v+5);
+            })
+
+            console.log("\n");
+
+           var result = marks.map(function fun(v){
+                return v+4;
+            })
+
+            console.log(result);
+
+            console.log("\n");
+
+
+            //Array of object
+            var Student =[
+                {id:101,name:"Ajeet",year:2001},
+                {id:102,name:"Chandan",year:2002},
+                {id:103,name:"Pawan",year:2003},
+                {id:104,name:"Samir",year:2004},
+                {id:105,name:"Aman",year:2005},
+
+            ];
+
+         Student.map(function myfun(val,i){
+
+            console.log(val,i);
+
+         })
+
+         console.log("\n");
+
+         var result = Student.map(function myfun(v,i,arr){
+            return v;
+        })
+
+        console.log(result);
+
+        var result = Student.map(function myfun(v,i,arr){
+            return v.name;
+        })
+
+        console.log(result);
+
+        console.log("\n");
+        
+        var result = Student.map(function myfun(v,i,arr){
+            return v.year;
+        })
+
+        console.log(result);
+
+        }
+
+        console.log("\n");
+        console.log("Sorting an Array");
+
+        function funSort()
+        {
+            //sort only sort alphabetically.
+
+            var name = ["Ajeet","Rita","Chandan","Bobby","Amar"];
+            
+            name.sort(); //changes original array
+
+            console.log(name); // ['Ajeet', 'Amar', 'Bobby', 'Chandan', 'Rita']
+        
+            name.sort().reverse();
+
+            console.log(name);
+
+            var marks=[85,10,20,50,5,100,90];
+            marks.sort();
+            console.log(marks);  //[10, 100, 20, 5, 50, 85, 90]
+
+
+            console.log("\n");
+            var m1 = [85,10,20,50,5,100,90];
+            
+            m1.sort(function (a,b){
+                return a-b; //ascending
+            })
+            
+            console.log(m1); // [5, 10, 20, 50, 85, 90, 100]
+
+            console.log("\n");
+
+            var m2 = [85,10,20,50,5,100,90];
+            
+            m2.sort(function (a,b){
+                return b-a;  //descending
+            })
+            
+            console.log(m2); //[100, 90, 85, 50, 20, 10, 5]
+
+            console.log("\n");
+
+            Stud = [
+                {id:101,name:"Ajeet",year:2020},
+                {id:102,name:"Chandan",year:2005},
+                {id:103,name:"Pawan",year:1997},
+                {id:104,name:"Samir",year:2023},
+                {id:105,name:"Aman",year:2008},
+            ];
+
+            //sor Stud year
+            // x and y mein object mile ga.
+            Stud.sort(function (x,y){
+                return x.year-y.year;
+            })
+
+            console.log(Stud);
+
+            //output
+            // (5) [{…}, {…}, {…}, {…}, {…}]
+            // 0
+            // : 
+            // {id: 103, name: 'Pawan', year: 1997}
+            // 1
+            // : 
+            // {id: 102, name: 'Chandan', year: 2005}
+            // 2
+            // : 
+            // {id: 105, name: 'Aman', year: 2008}
+            // 3
+            // : 
+            // {id: 101, name: 'Ajeet', year: 2020}
+            // 4
+            // : 
+            // {id: 104, name: 'Samir', year: 2023}
+
+            console.log("\n");
+
+            Stu = [
+                {id:101,name:"Ajeet",year:2020},
+                {id:102,name:"Chandan",year:2005},
+                {id:103,name:"Pawan",year:1997},
+                {id:104,name:"Samir",year:2023},
+                {id:105,name:"Aman",year:2008},
+            ];
+
+            Stu.sort(function (x,y){
+                return y.year-x.year;
+            })
+
+            console.log(Stu);
+
+            //output
+            //             (5) [{…}, {…}, {…}, {…}, {…}]
+            // 0
+            // : 
+            // {id: 104, name: 'Samir', year: 2023}
+            // 1
+            // : 
+            // {id: 101, name: 'Ajeet', year: 2020}
+            // 2
+            // : 
+            // {id: 105, name: 'Aman', year: 2008}
+            // 3
+            // : 
+            // {id: 102, name: 'Chandan', year: 2005}
+            // 4
+            // : 
+            // {id: 103, name: 'Pawan', year: 1997}
+
+            console.log("\n");
+
+            Dtu = [
+                {id:101,name:"Chandan",year:2020},
+                {id:102,name:"Ajeet",year:2005},
+                {id:103,name:"Samir",year:1997},
+                {id:104,name:"Pawan",year:2023},
+                {id:105,name:"Aman",year:2008},
+            ];
+
+            Dtu.sort(function (x,y){
+                var a = x.name;
+                var b = y.name;
+
+                if(a>b)
+                {
+                    return 1;
+                }
+                else if (a<b)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+            })
+
+            console.log(Dtu);
+
+            // (5) [{…}, {…}, {…}, {…}, {…}]
+            // 0
+            // : 
+            // {id: 102, name: 'Ajeet', year: 2005}
+            // 1
+            // : 
+            // {id: 105, name: 'Aman', year: 2008}
+            // 2
+            // : 
+            // {id: 101, name: 'Chandan', year: 2020}
+            // 3
+            // : 
+            // {id: 104, name: 'Pawan', year: 2023}
+            // 4
+            // : 
+            // {id: 103, name: 'Samir', year: 1997}
+
+            console.log("\n");
+
+            Ptu = [
+                {id:101,name:"Chandan",year:2020},
+                {id:102,name:"Ajeet",year:2005},
+                {id:103,name:"Samir",year:1997},
+                {id:104,name:"Pawan",year:2023},
+                {id:105,name:"Aman",year:2008},
+            ];
+
+            Ptu.sort(function (x,y){
+                var a = x.name;
+                var b = y.name;
+
+                if(a>b)
+                {
+                    return -1;
+                }
+                else if (a<b)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            })
+
+            console.log(Ptu);
+
+            // (5) [{…}, {…}, {…}, {…}, {…}]
+            // 0
+            // : 
+            // {id: 103, name: 'Samir', year: 1997}
+            // 1
+            // : 
+            // {id: 104, name: 'Pawan', year: 2023}
+            // 2
+            // : 
+            // {id: 101, name: 'Chandan', year: 2020}
+            // 3
+            // : 
+            // {id: 105, name: 'Aman', year: 2008}
+            // 4
+            // : 
+            // {id: 102, name: 'Ajeet', year: 2005}
+            // length
+            // : 
+            // 5
+
+            //Compare function in sort()
+
+            
+
+
+        }
+
+       
+
+    </script>
+    
+</body>
+</html>
