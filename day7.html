@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 7 </title>
+</head>
+<body>
+    
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+      </div>
+
+      <div id="divId">
+
+      </div>
+
+    <script>
+
+        var name1 = ["Ajeet","Chandan","Pawan","Smith"]; //Literal method for declaring array;
+
+        console.log(name1);
+
+        console.log("Length of array name1 = "+name1.length);
+
+        var name2 = new Array("AA","BB","CC","DD"); //declaring array using new keyword.
+
+        console.log("\n");
+        
+        console.log(name2);
+
+        console.log("Length of array name2 = "+name2.length);
+
+        var mixedarray = ["Ajeet","Chandan","Pawan","Samir",true,false,101,[11,22,33,40,5],{id:101}];
+
+        console.log("\n");
+        console.log(mixedarray);
+
+       console.log("\n");
+
+       console.log(mixedarray[3]);  //    console.log(mixedarray[0]);
+
+      // console.log(mixedarray[7]);
+
+       console.log(mixedarray[0]);  //for finding the first element.
+       console.log(mixedarray[mixedarray.length-1]); //for finding last element
+
+       console.log("Nested array length ="+mixedarray[7].length); 
+       
+       console.log(mixedarray[7][3]);
+
+       console.log(mixedarray[mixedarray.length]);  // This will give undefined.  //In other languages we get error.
+
+       mixedarray[1] = "Chandan Kumar";
+
+       console.log(mixedarray);
+       console.log("\n");
+
+       var names = ["Ajeet","Chandan","Pawan","Samir"];
+       console.log(names);
+       names[1] = "Chandan Kumar";
+       names[names.length-1]="";
+       console.log(names);
+       console.log(typeof names);  //Output = Object
+
+       console.log("\n");
+
+       var names = ["Ajeet","Chandan","Pawan","Samir",{id:501,name:'Karan'}];
+       console.log(typeof names);
+       
+       console.log(Array.isArray(names));
+
+       console.log("\n");
+
+       //To find Object type
+
+       console.log(Array.isArray(names)); // Output = true
+
+       var namesObj = {
+        id:101,
+        name:'Om'
+       }
+
+       console.log(Array.isArray(namesObj)); //Output = false
+
+       console.log("\n");
+
+       var nam1 = ["Ajeet","Chandan","Pawan","Samir",{id:501,name:"Ajeet"},{id:501,name:"Ajeet"}];     
+       console.log(nam1);
+       console.log(typeof nam1);
+       console.log(Array.isArray(nam1));
+
+      console.log("\n");
+
+       var Students ={
+        id:102,
+        name:"Ajeet",
+        marks1:[10,20,20],
+        marks2:[10,20,20],
+        marks3:[10,20,20],
+       }
+       
+      console.log(Students);
+
+      console.log("\n");
+
+      console.log(nam1 instanceof Array);  //To check that given variable is Array or object
+
+      console.log(Students instanceof Array);  //false
+
+      console.log("\n");
+
+      console.log("Sort In Array");
+
+      var mane = ["Ajeet","Samir","Chandan","Pawan"];
+
+      console.log(mane); //['Ajeet', 'Samir', 'Chandan', 'Pawan']
+
+      console.log(mane.sort());  // ['Ajeet', 'Chandan', 'Pawan', 'Samir']
+
+      console.log(mane); // ['Ajeet', 'Chandan', 'Pawan', 'Samir']
+      
+      //Note = sort() existing array ko hi change kar deta hai.
+
+
+      console.log("\n");
+
+      for(let i=0;i<mane.length;i++)
+      {
+        console.log(i,mane[i]);
+      }
+
+      document.getElementById('divId').innerHTML = "Ajeet";
+
+      var str = "<ul>";
+      
+      for(let i=0;i<mane.length;i++)
+      {
+        str = str + "<li>"+mane[i]+"</li>";
+      }
+
+
+      str = str+ "</ul>";
+
+      document.getElementById('divId').innerHTML = str;
+
+      // For of loop
+
+      var sane = ["Rama","Shyama","Rana","Tarun"];
+      var str = "<ul>";
+      for(let val of sane)
+      {
+        str = str + "<li>"+val+"</li>";
+      }
+      str = str+ "</ul>";
+      document.getElementById('divId').innerHTML = str;
+
+      console.log("\n");
+
+      //For in loop
+      var tane = ["Kavita","Sita","Rani","Gita"];
+      var str = "<ul>";
+      for(let index in tane)
+      {
+        str = str + "<li>"+tane[index]+"</li>";
+      }
+      str = str+ "</ul>";
+      document.getElementById('divId').innerHTML = str;
+
+      console.log("\n");
+
+      //for each
+      var kane = ["Rahul","Kamal","Car","Cheer"];
+
+      var str = "<ul>";
+      kane.forEach(function myFun(val)
+      {
+        str = str + "<li>"+val+"</li>";
+
+      })
+     
+      document.getElementById('divId').innerHTML = str;
+
+      //Output
+      // Rahul
+      // Kamal
+      // Car
+      // Cheer
+
+      console.log("\n");
+
+      var kane = ["Chani","Sister","Bus","Gun"];
+
+      var str = "<ul>";
+      kane.forEach(function myFun(val,index)
+      {
+        str = str + "<li>"+index+"</li>";
+
+      })
+
+      document.getElementById('divId').innerHTML = str;
+       
+      //Output
+      // 0
+      // 1
+      // 2
+      // 3
+
+      console.log("\n");
+
+      var oane = ["Sunny","Bunny","Tunny","Pooja"];
+
+      var str = "<ul>";
+      oane.forEach(function myFun(val,index,arr)
+      {
+        str = str + "<li>"+arr[index]+"</li>";
+
+      })
+
+      document.getElementById('divId').innerHTML = str;
+
+      // Output
+      // ======
+      // Sunny
+      // Bunny
+      // Tunny
+      // Pooja
+
+      //first parameter = value  //Ex oane ka element
+      //second parameter = index
+      //third parameter = arr  //full array
+
+
+      var umane = ["Ajeet","Samir","Chandra","Pawan"];
+
+      umane.push("Ram");
+      umane.push("Karan","Mohan");
+      console.log(umane);
+
+      console.log("\n");
+
+      console.log(umane.push("Ok","SOS"));  //It returns length = 9
+
+      var len = umane.push("TT","KK","LL");
+
+      console.log(len); // 12
+
+      var qane = ["Ank","Ala","Lala","Kumar"];
+      console.log(qane);
+
+      //unshift
+
+      qane.unshift("Uama");
+
+      console.log(qane);
+
+      //to remove last element use pop
+
+      qane.pop();
+
+      console.log(qane);
+
+      // to remove from first
+
+      qane.shift();
+
+      console.log(qane);
+
+      console.log(qane.unshift("Rad"));  //Length = 4
+
+      console.log(qane.pop()); //Lala
+
+      var zzc = [10,20];
+
+      if(zzc instanceof Array)
+      {
+        console.log("zzc variable is Array");
+
+      }else{
+        console.log("It is Object");
+      }
+
+      // while(var count<10) //<-- This will not support, give error          
+      // {
+      //   console.log(count);
+      //   count++;
+      // }
+   
+    </script>
+
+</body>
+</html>
