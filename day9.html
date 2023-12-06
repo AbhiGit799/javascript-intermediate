@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 9</title>
+</head>
+<body>
+   
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+     </div>
+
+     <p id="pId"></p>
+
+    <script>
+
+        function greeting(name,msg)
+        {
+            console.log(msg+" "+name);
+        }
+
+        greeting("Ajeet","Hello");
+
+
+        function greetingrt(name,msg)
+        {
+            return msg+" "+name;
+        }
+
+        console.log(greetingrt("Rama","Hello"));
+        
+       
+        function greetingmsg(name,msg)
+        {
+           return msg() + " "+name; 
+        }
+
+        function message()
+        {
+            return "Hi";
+        }
+
+        console.log(greetingmsg("Karan",message));
+
+       //function as a variable.
+
+       function add(a,b)
+       {
+        return a+b;
+       }
+
+       function fun1()
+       {
+        let result = add(20,30)+10+20;
+        document.getElementById("pId").innerHTML= "Total amount is "+result;
+       // document.getElementById("pId").innerHTML= "Total amount is "+add(20,30);
+      
+       }
+
+
+       fun1();
+
+       console.log("\n");
+
+       var str = 'I am ajeet kumar';
+       var result = str.indexOf('ajeet kumar');
+
+       console.log(result);
+
+       console.log(str.indexOf('ajeet singh'));
+
+       var str1 = "Aman I am aman kumar";
+       console.log(str1.indexOf('kumar'));
+
+       console.log("\n");
+
+       var str2 = "Hello Sita";
+       console.log(str2.lastIndexOf("l"));  // 3 <--------------------- lastIndexOf
+
+
+       console.log("\n");
+
+       var str3 = "ajeet I am ajeet kumar";
+
+       var ans = str3.indexOf('ajeet');  //0  first matching
+       console.log(ans);
+
+       var bns = str3.lastIndexOf('ajeet');  //11  last matching
+       console.log(bns);
+
+       var str4 = "ajeet I am ajeet kumar";
+       var cns = str4.indexOf('ajeet',5);
+       console.log(cns);  //11
+       var dns = str4.indexOf('ajeet',0);
+       console.log(dns);  //0
+
+       console.log("\n");
+
+       //search()
+       //position argument not available in search()
+       var str5 = 'rita I am rita kumar';
+       let ccns = str5.search('rita kumar');
+       console.log(ccns); //10
+
+       console.log("\n");
+
+       // substr()      slice()      substring()    
+      
+       var stra = "Ajeet, Chandan, Pawan, Samir";
+       var result1 = stra.slice();
+       console.log(result1);  //Ajeet, Chandan, Pawan, Samir
+
+       console.log(stra.slice(0)); //Ajeet, Chandan, Pawan, Samir 
+
+       console.log(stra.slice(7));  // Chandan, Pawan, Samir
+
+       console.log(stra.slice(7,14)); //Chandan 
+
+       console.log(stra.slice(16,21)); //Pawan
+
+       console.log(stra.slice(7,2)); //nothing will come
+
+       console.log("\n");
+
+       var strb = "Ajeet, Chandan, Pawan, Samir";
+
+       var resulta = strb.substring();
+
+       console.log(resulta);
+
+       var resultb = strb.substring(7);
+
+       console.log(resultb);
+
+       var resultc = strb.substring(7,14);
+
+       console.log(resultc);   //Chandan
+
+       var resultc = strb.substring(16,21);
+
+       console.log(resultc);  //Pawan
+
+       var resultd = strb.slice(-12,-7);  
+
+      console.log(resultd);//Pawan
+
+      // negative index not supported by substring
+
+      console.log("\n");
+
+      console.log("substr examples");
+
+      var strc = "Ajeet, Chandan, Pawan, Samir";
+
+      var resulte = strc.substr();
+
+      console.log(resulte);
+
+      var resultf = strc.substr();
+
+      console.log(resultf);
+
+      var resultg = strc.substr(7);
+
+     console.log(resultg);  //Chandan, Pawan, Samir
+
+     
+     var resulth = strc.substr(7,7);
+
+     console.log(resulth); //Chandan
+
+     
+     var resulti = strc.substr(7,6);
+
+     console.log(resulti);
+
+
+     var resultj = strc.substr(0,strc.length);
+
+    console.log(resultj);
+
+
+    var resultk = strc.substr(strc.indexOf('Chandan'),str.length);
+
+    console.log(resultk);
+
+    var resultl = strc.substr(strc.indexOf('Pawan'),str.length);
+
+    console.log(resultl);    
+
+    var resultm = strc.substr(strc.indexOf('Aman'),str.length);
+
+   console.log(resultm); 
+
+   var resultn = strc.substr(strc.indexOf('Aman')>=0 ? strc.indexOf('Aman'):0,strc.length)
+
+   console.log(resultn);
+
+   var resultn = strc.substr(strc.indexOf('Pawan')>=0 ? strc.indexOf('Pawan'):0,strc.length)
+
+   console.log(resultn);
+
+
+   var index = strc.indexOf("Aman");
+
+   if(index>=0)
+   {
+    str.substr(index,strc.length);
+   }
+   else
+   {
+    console.log("Not Found!!");
+   }
+
+   console.log("\n");
+   
+   var strd = "Sahosoft Online Classes are amazing and easy to learn from basic to advanced level. We provide Online Classes, Online Live Project Training, Corporate Training, web development course videos and articles.";
+   var resultp = strd.substr(0,100)+"...";
+   console.log(resultp);
+
+   console.log("\n");
+
+   var resultq = strd.substring(0,100)+"...";
+   console.log(resultq);
+
+   console.log("\n");
+   
+   var email = "ajeetsingh@gmail.com";
+
+   if(email.indexOf('@gmail.com'))
+   {
+    console.log("It is a gmail ID");
+   }
+   else
+   {
+    console.log("It is not a gmail ID");
+   }
+
+   console.log("\n");
+
+   //Imp Note:- slice(start_index,end_index)
+   //slice() start position. (First character is 0).
+   // slice() end position (up to, but not including). Default is string length.
+   // return of slice() = The extracted part of the string.
+
+   // G=0 e=1 e=2 k=3 s=4 F=5 o=6 r=7 G=8 e=9 e=10 k=11 s=12
+
+   const xtr = "GeeksForGeeks";
+   const presult = xtr.slice(4);
+   console.log("slice() = "+presult);  //Output = sForGeeks
+
+   const qresult = xtr.slice(5,9);
+   console.log("slice() = "+qresult); //Output = ForG
+
+   const tresult = xtr.slice(2,5);
+   console.log("slice() = "+tresult); //Output =  eks
+
+   var lop = "Hello"
+   const uresult = lop.slice(-1);
+   console.log("slice() = "+uresult); //Output = o
+
+   const kresult = lop.slice(-1,-3);
+   console.log("slice() = "+kresult); //Output = No results
+
+   const wresult = lop.slice(4,1);
+   console.log("slice() = "+wresult);   //Output = No results
+
+
+
+
+
+   console.log("\n");
+
+   // Imp Note:- second parameter specifies the length of the extracted part
+   
+   //The substr() method extracts a part of a string. To extract characters from the end of the string, use a negative start position.
+
+   //If start is greater than the length, substr() returns "".
+   // If start is negative, substr() counts from the end of the string.
+
+   // Return value = A string containing the extracted part. If length is 0 or negative, an empty string is returned.
+
+    //Start or end values less than 0, are treated as 0
+
+   const vtr1 = "GeeksForGeeks";
+   const substrResult = vtr1.substr(7);
+   console.log("substr() = "+substrResult);  //Output = rGeeks
+
+   const btr1 = "GeeksForGeeks";
+   const substrResult1 = btr1.substr(3,7);
+   console.log("substr() = "+substrResult1);  // Output = k s F o rGe
+
+   const bow = "Love"
+   const ZsubstrResult1 = bow.substr(-3);
+   console.log("substr() = "+ZsubstrResult1); // ove
+
+   const GsubstrResult1 = btr1.substr(-3,-8);
+   console.log("substr() = "+GsubstrResult1); // No result.
+
+   const ntr = "Morning";
+   const AZsubstrResult1 = ntr.substr(5,1);
+   console.log("substr() = "+AZsubstrResult1); // n
+
+   const ij = "Ranu";
+   const hj = ij.substr(-9,2);
+   console.log("substr() = "+hj); // Ra
+
+
+
+
+   console.log("\n");
+
+   // The second argument to substring is the index to stop at (but not include),
+
+   // The substring() method extracts characters from start to end (exclusive).
+   // The substring() method does not change the original string.
+   
+   // substring() returns A string containing the extracted characters.
+
+   // substring() End position (up to, but not including).If omitted: the rest of the string.
+
+   // In substring(), If start is greater than end, arguments are swapped: (4, 1) = (1, 4).
+
+   //Start or end values less than 0, are treated as 0.
+
+   const ctr1 = "GeeksForGeeks";
+   const AsubstrResult = ctr1.substring(7);
+   console.log("substring() = "+AsubstrResult);  //Output = rGeeks
+
+   const BsubstrResult = ctr1.substring(3,7);
+   console.log("substring() = "+BsubstrResult); //Output = ksFo
+
+   const CsubstrResult = ctr1.substring(7,3);
+   console.log("substring() = "+CsubstrResult); // Output => substring() = ksFo
+
+   const DsubstrResult = ctr1.substring(-7,-3);
+   console.log("substring() = "+DsubstrResult);  // No Results
+
+   const EsubstrResult = ctr1.substring(-1,-2);
+   console.log("substring() = "+EsubstrResult);  // No Results
+
+   const vc = "Kalpana";
+   console.log(vc.substring(-1,3)); // Output = Kal
+
+   const cc = "Vipin";
+   console.log(cc.substring(-8,3)); //Output = Vip
+
+ </script>
+
+
+</body>
+</html>
