@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Learning 12</title>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h2
+        style="
+          background-color: blueviolet;
+          color: white;
+          text-transform: uppercase;
+        "
+      >
+        Learning JavaScript
+      </h2>
+    </div>
+
+    <script>
+      console.log("filter() examples");
+
+      var marks = [10, 20, 50, 80, 90, 70, 45];
+
+      console.log(marks);
+
+      //marks which are greater than or equal to 60
+
+      var resulta = marks.filter(function myfun(value, index, arr) {
+        return value >= 60;
+      });
+
+      console.log(resulta);
+
+      var resultb = marks.filter(function myfun(value, index, arr) {
+        return value < 60;
+      });
+
+      console.log(resultb);
+
+      var resultc = marks.filter(function myfun(value) {
+        return value < 60;
+      });
+
+      console.log(resultc);
+
+      var resultd = marks.filter(myfun);
+
+      function myfun(value) {
+        return value < 60;
+      }
+      console.log(resultd);
+
+      //types of function = named function and anonymous function and arrow
+
+      console.log("Anonymous function.");
+
+      var resulte = marks.filter(function (value) {
+        return value < 60;
+      });
+
+      console.log(resulte);
+
+      console.log("Arrow function");
+
+      var resultf = marks.filter((value) => {
+        return value < 60;
+      });
+
+      console.log(resultf);
+
+      //calling arrow function
+
+      let fun1 = (value) => {
+        return value < 60;
+      };
+
+      var resultg = marks.filter(fun1);
+
+      // let fun1 = (value)=>{           //<-------------- first need to define.Otherwise this will give error.
+      //     return value<60;
+      // }
+
+      console.log(resultg);
+
+      //18:30
+
+      var resulth = marks.filter((value) => {
+        return value > 50 && value < 100; // returning boolean value
+      });
+
+      console.log(resulth);
+
+      var resulti = marks.filter((value) => {
+        return true;
+      });
+
+      console.log(resulti);
+
+      var resultj = marks.filter((value) => {
+        return false;
+      });
+
+      console.log(resultj);
+
+      var resultk = marks.filter((value) => {
+        if (value > 50 && value < 100) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      console.log(resultk);
+
+      console.log("\n");
+
+      console.log("find()");
+
+      var marks = [10, 20, 50, 80, 90, 70, 45, 100];
+
+      let resultl = marks.find((value, index, arr) => {
+        return value > 60;
+      });
+
+      console.log(resultl); // first matching from left to right
+
+      let resultm = marks.find((value, index, arr) => {
+        return value < 60;
+      });
+
+      console.log(resultm); // first matching from left to right
+
+      //When object dont have any value, then we got undefined
+
+      let resultn = marks.find((value, index, arr) => {
+        return value == 60;
+      });
+
+      console.log(resultn); //undefined
+
+      let resulto = marks.find((value, index, arr) => {
+        return 1 == 1;
+      });
+
+      console.log(resulto); // Output = 10
+
+      let resultp = marks.find((value, index, arr) => {
+        return 2 == 3;
+      });
+
+      console.log(resultp); //Output = undefined
+
+      let resultq = marks.find((value, index, arr) => {
+        if (value < 40) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      console.log(resultq); //10
+
+      var Student = [
+        { id: 101, name: "Ajeet", age: 25 },
+        { id: 102, name: "Aman", age: 20 },
+        { id: 103, name: "Pawan", age: 60 },
+        { id: 104, name: "Ajeet", age: 85 },
+        { id: 105, name: "Samir", age: 30 },
+      ];
+
+      var resultr = Student.filter((s) => {
+        return s.name == "Ajeet";
+      });
+
+      console.log(resultr);
+
+      console.log("\n");
+
+      //To find first matching use find()
+
+      var results = Student.find((s) => {
+        return s.name == "Ajeet";
+      });
+
+      console.log(results);
+
+      var resultt = Student.find((s) => {
+        return s.age == 30;
+      });
+
+      console.log(resultt);
+
+      //findIndex
+      var resultu = Student.findIndex((s) => {
+        return s.age > 30;
+      });
+
+      console.log("findIndex" + resultu);
+
+      console.log("\n");
+
+      console.log("reduce() examples");
+
+      // reduce() takes 4 arguments.
+      // the total (the inital value/previously/returned value)
+      // the item value
+      // the item index
+      // the array itself.
+
+      var m1 = [10, 20, 50, 80, 90, 70, 45, 100, 10];
+
+      var resultv = m1.reduce((total, val, i, arr) => {
+        return total + val;
+      });
+
+      console.log(resultv); //475
+
+      var m2 = [];
+
+      var resultx = m2.reduce((total, val, i, arr) => {
+        return total + val;
+      }, 0); //if we not write 0 then we get error
+
+      console.log(resultx); //0
+
+      var m3 = [10, 20, 50, 80, 90, 70, 45, 100, 10];
+
+      var resulty = m3.reduce((total, val, i, arr) => {
+        return total + val;
+      }, 0);
+
+      console.log(resulty); //475
+
+      var resultz = m3.reduce((total, val, i, arr) => {
+        return total * val;
+      }, 0);
+
+      console.log(resultz); //0
+
+      var aresult = m3.reduce((total, val, i, arr) => {
+        return total + val;
+      }, 1000);
+
+      console.log(aresult); //1475
+
+      console.log("\n");
+
+      console.log("reduceright examples");
+
+      var m4 = [10, 20, 5];
+
+      var bresult = m4.reduceRight((total, val, i, arr) => {
+        return total - val;
+      });
+
+      console.log(bresult); // -25
+
+      var m5 = [10, 20];
+      var cresult = m5.reduceRight((total, val, i, arr) => {
+        return total - val;
+      }, 0);
+
+      console.log(cresult); //-30
+
+      console.log("\n");
+
+      console.log("every examples");
+
+      var m6 = [10, 20, 50, 80, 90, 70];
+
+      var dresult = m6.every((value) => {
+        return value >= 10;
+      });
+
+      console.log(dresult); //true
+
+      var Voter = [
+        { id: 101, name: "Ajeet", age: 25 },
+        { id: 102, name: "Chandan", age: 10 },
+        { id: 103, name: "Pawan", age: 60 },
+        { id: 104, name: "Samir", age: 85 },
+      ];
+
+      var eresult = Voter.every((obj) => {
+        return obj.age >= 18;
+      });
+
+      console.log(eresult); //false
+
+      console.log("\n");
+      console.log("some() examples");
+
+      var Blood = [
+        { id: 101, name: "Ajeet", age: 25 },
+        { id: 102, name: "Chandan", age: 10 },
+        { id: 103, name: "Pawan", age: 60 },
+        { id: 104, name: "Samir", age: 85 },
+      ];
+
+      var fresult = Blood.some((obj) => {
+        return obj.age >= 18;
+      });
+
+      console.log(fresult); //true
+
+      console.log("\n");
+
+      console.log("min() and max()");
+
+      var m7 = [10, 20, 50, 80, 90, 70, 45, 100, 10, 5];
+
+      console.log(Math.min.apply(null, m7)); // 5
+
+      console.log(Math.max.apply(null, m7)); //100
+
+      console.log("\n");
+
+      console.log("include()");
+
+      var m8 = [10, 20, 50, 80, 90, 70, 45];
+
+      console.log(m8.includes(80)); //true
+
+      var colors = ["red", "green", "blue", "white"];
+
+      //includes checks for particular
+
+      console.log(colors.includes("green")); //true
+
+      console.log("\n");
+
+      console.log("valueof()");
+      console.log(colors);
+      console.log(colors.valueOf());
+
+      console.log("\n");
+
+      var age = 90;
+
+      console.log(typeof age); //number
+      console.log(typeof age.toString()); //string
+
+      console.log(age == age.toString()); // true
+
+      console.log(age === age.toString()); //false
+
+      var name = "AJEET";
+      console.log(name.toLowerCase()); //ajeet
+
+      var name = "rama";
+      console.log(name.toUpperCase()); // RAMA
+    </script>
+  </body>
+</html>
