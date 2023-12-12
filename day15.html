@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 15</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+
+        </h2>
+      </div>
+
+    <script>
+
+     var Student={
+        firstName:"Ajeet",
+        lastName:"Singh",
+        fullName : function ()
+        {
+           // alert("Hi");
+           console.log(this);
+           console.log(this.firstName);
+           console.log(this.lastName);
+        }
+     }
+
+     console.log(Student.firstName);
+     console.log(Student.lastName);
+     console.log(Student.fullName);
+
+     console.log("\n");
+
+     Student.fullName();
+
+    // Output
+    // {firstName: 'Ajeet', lastName: 'Singh', fullName: ƒ}
+
+    console.log("\n");
+
+    var Stud={
+        firstName:"Ajeet",
+        lastName:"Singh",
+        fullName : function ()
+        {
+         // return this.firstName + " " + this.lastName;
+         return `${this.firstName} ${this.lastName}`;
+        }
+     }
+
+     console.log(Stud.fullName());
+
+     console.log("\n");
+
+     console.log(this); //this will give Window object
+
+     console.log("\n");
+
+     function print()
+     {
+        console.log(this); //this will give Window object //Not using strict mode
+     }
+
+     print();
+
+     "use strict" //should be on top - to work
+     function aprint()
+     {
+        console.log(this); //when using strict, we get undefined. 
+     }
+
+     aprint();
+
+     function funHide(element)
+     {
+        element.style.display='none';
+     }
+     
+     console.log("\n");
+
+     console.log("Objects are Mutable");
+
+     console.log("\n");
+
+     aStudent = {
+        id:201,
+        name:'Rama',
+        age:32
+     }
+
+    // console.log(aStudent); //{id: 201, name: 'Rama', age: 32}
+
+     let newStudent = aStudent;
+
+     newStudent.name = "Chandan";
+
+     console.log(aStudent); //{id: 201, name: 'Chandan', age: 32}
+
+    // console.log(newStudent); //{id: 201, name: 'Rama', age: 32}
+
+    console.log(newStudent); //{id: 201, name: 'Chandan', age: 32}
+
+    console.log("\n");
+
+    let a = 10;
+    let b = a;
+    b=100;
+    console.log(a); //10
+    console.log(b); // 100
+
+    console.log("\n");
+   
+   var arr = [10,20,30,40,50];
+
+   var arr2 = arr;
+
+   arr.push(100);
+
+   console.log(arr2);
+
+   console.log(arr);
+
+   console.log("\n");
+
+   let col = "name";
+
+   let bStudent = {
+      id:201,
+      name:"Raja",
+      age:23
+   }
+
+   console.log(bStudent[col]);
+   
+   let cStudent = {
+      id:201,
+      name:"Raja",
+      age:23
+   }
+
+   cStudent.age = 25;
+   cStudent.emailId = "raja12@gmail.com";
+   cStudent.mobile = 1234567890;
+   console.log(cStudent);
+
+   delete cStudent.id;
+
+   console.log(cStudent);
+
+   console.log("\n");
+
+  let uStudent = {
+   id:110,
+   name:"Karan",
+   age:26,
+   getName: function demo(){
+      console.log(this);
+   }
+  }
+
+  console.log(Object.values(uStudent)); // [110, 'Karan', 26]
+
+  console.log("\n");
+
+  //Object accessor
+  //Here get is keyword
+
+  let tStudent = {
+   firstName:"Raman",
+   lastName:"Singh",
+   get fullName()
+   {
+      return `${tStudent.firstName} ${tStudent.lastName}`;
+   }
+  }
+
+  console.log(tStudent.firstName);
+  console.log(tStudent.lastName);
+  console.log(tStudent.fullName);
+
+  console.log("\n");
+
+
+  let yStudent = {
+   firstName:"Sita",
+   lastName:"Singh",
+   set setEmail(emailId)
+   {
+      this.email = emailId;
+   }
+  }
+
+  yStudent.setEmail = "sita12@gmail.com";
+
+  console.log(yStudent);
+  
+
+   </script>
+
+    <br>
+
+    <button type="button" onclick="this.style.display='none'">Hide</button>
+
+    &nbsp;&nbsp;
+
+    <button type="button" onclick="funHide(this)">Hide2</button>
+
+
+
+
+    
+
+</body>
+</html>
