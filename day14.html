@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 14</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+      </div>
+
+    <script>
+        var todayDate = new Date(); 
+        console.log(todayDate); //Mon Dec 11 2023 15:47:12 GMT+0530 (India Standard Time)
+
+        var atodayDate = new Date(0);
+        console.log(atodayDate); //Thu Jan 01 1970 05:30:00 GMT+0530 (India Standard Time)
+
+        var btodayDate = new Date(2023,6,10,12,20,30,20); //month = index 0 to 11
+        console.log(btodayDate); //Mon Jul 10 2023 12:20:30 GMT+0530 (India Standard Time)
+
+        var ctodayDate = new Date(2023,6,10,); //month = index 0 to 11
+        console.log(ctodayDate); //Mon Jul 10 2023 00:00:00 GMT+0530 (India Standard Time)
+
+        var dtodayDate = new Date(2023,6); //month = index 0 to 11
+        console.log(dtodayDate); //Sat Jul 01 2023 00:00:00 GMT+0530 (India Standard Time)
+
+
+        var etodayDate = new Date(2022); //month = index 0 to 11
+        console.log(etodayDate); // Thu Jan 01 1970 05:30:02 GMT+0530 (India Standard Time)
+
+        var ftodayDate = new Date(2022,8); //month = index 0 to 11
+        console.log(ftodayDate);  //Thu Sep 01 2022 00:00:00 GMT+0530 (India Standard Time)
+        
+        var gtodayDate = new Date("2023 08 15"); //month = index 0 to 11
+        console.log(gtodayDate); // Tue Aug 15 2023 00:00:00 GMT+0530 (India Standard Time)
+
+        var htodayDate = new Date("2023-09-18"); //month = index 0 to 11
+        console.log(htodayDate); //Mon Sep 18 2023 05:30:00 GMT+0530 (India Standard Time)
+
+        var itodayDate = new Date("2021/11/23");
+        console.log(itodayDate); //Tue Nov 23 2021 00:00:00 GMT+0530 (India Standard Time)
+
+        var jtodayDate = new Date("ajeet Dec 25 2023");
+        console.log(jtodayDate); //Mon Dec 25 2023 00:00:00 GMT+0530 (India Standard Time)
+
+        console.log("\n");
+
+        var myDate = new Date();
+        console.log(myDate.getTime()); //1702291053370
+
+        var amyDate = new Date(1702291023206);
+        console.log(amyDate); //Mon Dec 11 2023 16:07:03 GMT+0530 (India Standard Time)
+
+
+        var bmyDate = new Date();
+
+
+        console.log(bmyDate.getDate()); // 11
+
+        console.log(bmyDate.getDay()); //1
+
+        console.log(bmyDate.getFullYear()); //2023
+
+        console.log(bmyDate.getHours()); //16
+
+        console.log(bmyDate.getMilliseconds()); //268
+
+        console.log(bmyDate.getMinutes()); //13
+
+
+        console.log("\n");
+
+        var cmyDate = new Date();
+        cmyDate.setFullYear(2010);
+        
+        console.log(cmyDate); //at Dec 11 2010 16:15:38 GMT+0530 (India Standard Time)
+
+        cmyDate.setMonth(10);
+        console.log(cmyDate); //Thu Nov 11 2010 16:30:37 GMT+0530 (India Standard Time)
+
+        cmyDate.setDate(21);
+        console.log(cmyDate); //Sun Nov 21 2010 16:30:22 GMT+0530 (India Standard Time)
+
+        console.log("\n");
+
+        var ktodayDate = new Date();
+
+        var myBday = new Date(1991,7,19);
+
+        if(ktodayDate<myBday)
+        {
+            console.log("today < myBday");
+        }
+        else
+        {
+            console.log("today > myBday");
+        }
+
+        //When you want to compare date, best way to convert to date object
+        var td = new Date();
+        var mytd = new Date("2024/08/14");
+
+        if(td<mytd)
+        {
+            console.log("today < myBday");
+        }
+        else
+        {
+            console.log("today > myBday");
+        }
+
+        console.log("\n");
+
+        var Students = [
+            {id:100,date:'July 11 2009'},
+            {id:101,date:'April 05 1999'},
+            {id:102,date:'May 12 2020'},
+            {id:102,date:'May 24 2006'},
+        ];
+
+        console.log(Students);
+
+        console.log("\n");
+
+        Students.sort(function(a,b){
+            return new Date(a.date) - new Date(b.date);   // for ascending a-b     
+        });
+
+        console.log(Students);
+
+        console.log("\n");
+
+        var myStudents = [
+            {id:100,date:'July 11 2009'},
+            {id:101,date:'April 05 1999'},
+            {id:102,date:'May 12 2020'},
+            {id:102,date:'May 24 2006'},
+        ];
+
+        myStudents.sort(function(a,b){
+            return new Date(b.date) - new Date(a.date);   // for descending b-a    
+        });
+
+        console.log(myStudents);
+
+        console.log("\n");
+
+        var newDate = new Date();
+
+        console.log(newDate.getDate()); //11
+
+        console.log(newDate.getDay()); // 1
+
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+        console.log(days[newDate.getDay()]); //Monday
+
+        console.log("\n");
+
+        console.log("Task");
+
+        //Task
+
+        var tStudent =[
+
+          {id:101,name:"Ajeet",age:25,marks:[10,30,20,70,80]},
+
+          {id:102,name:"Chandan",age:10,marks:[20,30,20,70,80]},
+
+          {id:103,name:"Pawan",age:60,marks:[60,30,20,70,80]},
+
+          {id:104,name:"Ajeet",age:85,marks:[90,30,20,70,80]},
+
+          {id:105,name:"Samir",age:30,marks:[100,30,20,70,80]},
+
+        ];
+
+       tStudent.forEach((s)=>{
+        //console.log(s);
+        s.marks.forEach((v,i,arr)=>{
+            if(v<60)
+            {
+              arr[i] = "Fail";
+            }
+        })
+       })
+
+       console.log(tStudent);
+
+    </script>
+
+</body>
+</html>
