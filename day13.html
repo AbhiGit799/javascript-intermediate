@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 13</title>
+
+    <style>
+        .sahosoft{
+            background-color: red;
+            color: white;
+        }
+        .hcl{
+            background-color: green;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+      </div>
+
+      <br>
+
+      <h3>Hello TechWorld !!</h3>
+
+      <input type="button" value="Attr Fun" onclick="attrfun()">
+    
+    <script>
+        var acolors = ['red','green','blue','white'];
+
+        acolors.fill(''); //['', '', '', '']
+
+        console.log(acolors);
+
+        var bcolors = ['red','green','blue','white'];
+
+        bcolors.fill("NA"); 
+
+        console.log(bcolors); // ['NA', 'NA', 'NA', 'NA']
+
+        var ccolors = ['red','green','blue','white'];
+
+        ccolors.fill("",1); // ['red', '', '', '']
+
+        console.log(ccolors);
+
+        var dcolors = ['red','green','blue','white'];
+
+        dcolors.fill("",1,2);  //Last index got excluded.
+
+        console.log(dcolors); //['red', '', 'blue', 'white']
+
+        var Student = [
+            {id:101,name:"Ajeet",age:25,marks:[10,30,20,70,80]},
+            {id:102,name:"Chandan",age:10,marks:[20,30,20,70,80]},
+            {id:103,name:"Pawan",age:60,marks:[60,30,20,70,80]},
+            {id:104,name:"Ajeet",age:85,marks:[90,30,20,70,80]},
+            {id:105,name:"Samir",age:30,marks:[100,30,20,70,80]},
+            
+        ];
+
+       Student.map(s=>s.marks.fill(0));
+
+       console.log(Student);  //[0, 0, 0, 0, 0] in all 
+
+    //    Student.map(s=>s.marks.fill(0,2));  // [10,30,0, 0, 0]
+
+    //    console.log(Student);
+
+    console.log("\n");
+    console.log("JSON examples");
+        
+    Stud = {
+        id:101,
+        name:"Aman Singh",
+        age:22,
+        email:"ajeet12@gmail.com"
+    }
+
+    console.log(Stud); //{id: 101, name: 'Aman Singh', age: 22, email: 'ajeet12@gmail.com'}
+    
+    console.log("\n");
+
+    console.log("Converted to JSON example below");
+    var StudJson = JSON.stringify(Stud); //Converting Object to JSON
+
+    console.log(StudJson); //{"id":101,"name":"Aman Singh","age":22,"email":"ajeet12@gmail.com"}
+
+    console.log("\n");
+
+    console.log("Converting JSON to Object");
+
+    console.log(JSON.parse(StudJson));
+
+    console.log("\n");
+
+    function attrfun()
+    {
+      // document.getElementsByTagName('h3')[0].setAttribute("class","sahosoft");
+       
+      // document.getElementsByTagName('h3')[0].setAttribute('style','background-color:yellow;color:black');
+
+     // document.getElementsByTagName('h3')[0].style.backgroundColor = "green";  //one demrit is that we need to right style many times.
+
+    // document.getElementsByTagName('h3')[0].style.color='white';
+
+    var element = document.getElementsByTagName('h3')[0];
+    var has = element.hasAttribute('Class');
+
+    // if(has)
+    // {
+    //   console.log("Yes");
+    // }else{
+    //    //console.log("No");
+    //    element.setAttribute("class","sahosoft");
+    //}
+    
+    //   if(!has)
+    //   {
+    //         element.setAttribute("class","sahosoft");
+    //   }
+
+    //  if(has)
+    //  {
+    //     console.log(element.getAttribute('class'));
+    //  }
+    //  else
+    //  {
+    //     element.setAttribute("class","sahosoft");
+    //  }
+
+    if (has && element.getAttribute('class')=="sahosoft")
+    {
+        element.removeAttribute("class");
+        element.setAttribute("class","hcl");
+    } else
+    {
+        element.setAttribute("class","sahosoft");
+    }
+
+    }
+
+    console.log(10); //10
+    console.log(Number("10"));  //10
+    console.log(Number(true)); //1
+    console.log(Number(false)); //0
+    console.log(Number(" 10 ")); //10
+    console.log(Number("20.25")); // 20.25
+    console.log(Number(20.25));  //20.25
+    console.log(Number(" 20.25 ")); // 20.25
+
+    //can;t change string to number
+
+    console.log(Number("ajeet")); //NaN
+
+    console.log(Number("20,15")); //NaN
+
+    console.log(Number("20 25")); //NaN
+
+    console.log("\n");
+
+    console.log(parseInt(10));  //10
+    console.log(parseInt("10")); //10
+
+    console.log(parseInt(true)); //NaN
+
+    console.log(parseInt(false)); //NaN
+
+    console.log(parseInt(" 10 ")); //10
+
+    console.log(parseInt("20.25")); //20
+
+    console.log(parseInt("ajeet")); //NaN
+
+    console.log(parseInt("20,23")); //20
+
+    console.log(parseInt("20 25")); //20
+
+    console.log("\n");
+
+    console.log(parseFloat(10)); //10
+    console.log(parseFloat("10")); //10
+    console.log(parseFloat(true));  //NaN
+    console.log(parseFloat(false)); //NaN
+
+    console.log(parseFloat(" 10 ")); //10
+
+    console.log(parseFloat("20.12")); //20.12
+
+    console.log(parseFloat("ajeet")); //NaN
+
+    console.log(parseFloat("20,21")); //20
+
+    console.log(parseFloat("20 24")); //20
+
+
+    console.log(Number(11,22,5000)); //11
+
+    console.log(parseInt("11,22,5000")); //11
+
+    console.log("\n");
+
+    var val = true;
+
+    console.log(val?1:0); //1
+
+
+    var val1 = false;
+    console.log(val1?1:0); //0
+    
+    console.log("\n");
+
+    var age;
+    console.log(Number(age));  //NaN
+    console.log(parseInt(age)); //NaN
+    console.log(parseFloat(age)); //NaN
+
+    console.log("\n");
+
+    var age=null;
+    console.log(Number(age));  //0
+    console.log(parseInt(age)); //NaN
+    console.log(parseFloat(age)); //NaN
+
+
+    </script>
+
+</body>
+</html>
+
+
