@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning 16</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2
+          style="
+            background-color: blueviolet;
+            color: white;
+            text-transform: uppercase;
+          "
+        >
+          Learning JavaScript
+        </h2>
+    </div>
+
+<script>
+
+//  if(window.localStorage)
+//  {
+//     alert("local Storage Supported");
+    
+//  }
+//  else{
+//     alert("Local Storage Note Supported");
+//  }
+
+
+// if(window.sessionStorage)
+// {
+//     alert("Session Storage Supported");
+// }
+// else{
+//     alert("Session Storage NOT Supported");
+// }
+
+
+function funSetData()
+{
+    localStorage.setItem("EmployeeId","101");
+    localStorage.setItem("EmployeeName","Raja");
+    
+    let emp = {
+        id:301,
+        name:"Aman Singh",
+        age:30
+    }
+
+    localStorage.setItem("empObjObj",emp);
+
+    localStorage.setItem("empObj",JSON.stringify(emp));  //converting object to string
+
+}
+
+//funSetData();
+
+
+function funSetDataSession()
+{
+    sessionStorage.setItem("EmployeeId","101");
+    localStorage.setItem("EmployeeName","Raja");
+    
+    let emp = {
+        id:301,
+        name:"Aman Singh",
+        age:30
+    }
+
+    sessionStorage.setItem("empObjObj",emp);
+
+    sessionStorage.setItem("empObj",JSON.stringify(emp));  //converting object to string
+
+}
+
+
+</script>
+
+
+<button type="button" onclick="funSetData()">Set Data LocalStorage</button>
+&nbsp; &nbsp;
+<button type="button" onclick="funSetDataSession()">Set Data SessionStorage</button>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning</title>
+</head>
+<body>
+
+    <h2>Student Form</h2>
+    <hr>
+
+    <br/>
+
+    <button type="button" onclick="funGetData()">Get Data</button>
+    
+    &nbsp;
+
+    <button type="button" onclick="funUpdateData()">Update Data</button>
+    
+    &nbsp;
+
+    <button type="button" onclick="funDeleteData()">Delete Data</button>
+    &nbsp;
+
+    <button type="button" onclick="funClearData()">Clear Session</button>
+   
+
+    <script>
+        function funGetData()
+        {
+           console.log(localStorage.getItem("EmployeeId"));
+
+           console.log(localStorage.getItem("EmployeeName"));
+
+           console.log(localStorage.getItem("empObj"));
+
+           console.log(JSON.parse(localStorage.getItem("empObj"))); //converting to object
+
+           sessionStorage.getItem("EmployeeId");
+
+           sessionStorage.getItem("EmployeeName");
+
+           sessionStorage.getItem("empObj");
+
+           console.log("Local Storage Length = "+localStorage.length);
+
+           console.log("Session Storage Length = "+sessionStorage.length);
+
+           console.log("\n");
+
+           console.log("Loop on localstorage");
+
+           for(let i=0;i<localStorage.length;i++)
+           {
+              //console.log(i);
+
+              let key = localStorage.key(i);
+
+              // console.log(key);
+
+              console.log(key,localStorage.getItem(key));
+
+           }
+
+        }
+
+        function funUpdateData()
+        {
+            localStorage.setItem("EmployeeId","201");          
+
+        }
+
+        function funDeleteData()
+        {
+            localStorage.removeItem("EmployeeId");
+            localStorage.removeItem("EmployeeName");
+            localStorage.removeItem("empObjObj");
+            localStorage.removeItem("empObj");
+
+            sessionStorage.removeItem("EmployeeId");
+            sessionStorage.removeItem("EmployeeName");
+            sessionStorage.removeItem("empObjObj");
+            sessionStorage.removeItem("empObj");
+        }
+
+        function funClearData()
+        {
+            localStorage.clear();
+            sessionStorage.clear();
+
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
