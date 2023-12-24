@@ -43,47 +43,43 @@
 
         function funConcat()
         {
-            var names=["Ajeet","Chandan"];
+            console.log("concat() examples");
 
+            var names=["Ajeet","Chandan"];
             var names2 = ["Pawan","Samir"];
 
             names.concat(names2);
-
             console.log(names); //['Ajeet', 'Chandan']
 
             //concat() will not change existing array
+            //The concat() method creates a new array by merging (concatenating) existing arrays.
+            //The concat() method does not change the existing arrays. It always returns a new array.
+            //The concat() method can take any number of array arguments.
 
             var result = names.concat(names2);
-
             console.log(result);
-
             console.log(names.concat(names2));
 
             var names3 = ["Mohan"];
-
             console.log(names.concat(names2,names3));
-
             console.log(names.concat(names2,names3,['Arjun','Aman']));
-
-
-
         }
 
 
         console.log("\n");
         console.log("Splicing an Array splice()");
+        // The splice() method can be used to add new items to an array.
+        //Using splice() to Remove Elements
+        //You can use splice() to remove elements without leaving "holes" in the array.
 
         function funSplice()
         {
-
+            console.log("Splicing an Array splice()");
             var n1 = ["Ajeet","Chandan","Pawan","Samir"];
-
             n1.splice();  //change exisiting array
-
             console.log(n1); //['Ajeet', 'Chandan', 'Pawan', 'Samir']
 
              n1.splice(0);
-
              console.log(n1); // []
 
              var n1 = ["Ajeet","Chandan","Pawan","Samir"];
@@ -133,16 +129,18 @@
 
              console.log(n1); //['Ajeet', 'Chandan', 'Pawan', 'Samir', 'Rani', 'Shilpa']
 
-
-
-
         }
+
 
         console.log("\n");
 
         console.log("Slicing an Array");
 
         //slice() last parameter is length
+        //The slice() method slices out a piece of an array into a new array.
+        //The slice() method creates a new array. It does not remove any elements from the source array
+        //The slice() method can take two arguments. The method then selects elements from the start argument, and up to (but not including) the end argument.
+        //If the end argument is omitted, the slice() method slices out the rest of the array. 
 
         function funSlice()
         {
@@ -161,24 +159,36 @@
 
         console.log("\n");
         console.log("Map in Array");
+        /*
+        The map() method creates a new array by performing a function on each array element.
+
+        The map() method does not execute the function for array elements without values.
+
+            The map() method does not change the original array.
+            The function takes 3 arguments:
+            ▪ The item value
+            ▪ The item index
+            ▪ The array itself
+            When a function uses only the value parameter, the index and array parameters can be 
+            omitted.
+        
+        */
 
         function funMap()
         {
+            console.log("Map in Array");
             var marks = [10,20,30,40,50];
             var marks2 = [100,200,300,400,500];
 
             marks.map(function myFun(value,index,array){
-
                 //value marks ke elements mile ge
                 //index par array ke index mile ge.
                 //array will hold same array as marks
-
                 console.log(value,index,array);
-           
-
-
             })
             
+            console.log(marks);
+
             console.log("\n");
 
             marks2.map(myFun2);  // no function () here
@@ -187,6 +197,8 @@
             console.log(value,index,array);
             }
             
+            console.log(marks2);
+
             console.log("\n");
         
             marks.map(function fun(v,i,arr){
@@ -246,9 +258,23 @@
 
         console.log("\n");
         console.log("Sorting an Array");
+        console.log("\n");
+
+        /*
+        
+        By default, the sort() function sorts values as strings.
+        This works well for strings ("Apple" comes before “Boy").
+        However, if numbers are sorted as strings, "50" is bigger than "100", because “5" is bigger than 
+        "1".
+        Because of this, the sort() method will produce incorrect result when sorting numbers.
+        You can fix this by providing a compare function.
+        
+        */
 
         function funSort()
         {
+            console.log("Sorting an Array");
+
             //sort only sort alphabetically.
 
             var name = ["Ajeet","Rita","Chandan","Bobby","Amar"];
