@@ -6,6 +6,7 @@
     <title>JavaScript Learning 6</title>
   </head>
   <body>
+
     <div style="text-align: center">
       <h2
         style="
@@ -19,6 +20,7 @@
     </div>
 
     <script>
+    
       if (true) {
         console.log("Hello Techworld");
       }
@@ -227,6 +229,7 @@
         console.log(ii);
       }
 
+      console.log("For Loop Reserve");
       for (var g = 10; g>=1; g--) {
         console.log(g);
       }
@@ -249,6 +252,8 @@
 
     mrk.forEach(el=>console.log(el));
 
+    console.log("For Each Loop Added 100");
+
     mrk.forEach(el=>console.log(el+100));
 
     console.log("\n");
@@ -256,6 +261,7 @@
     console.log("For In Loop");
     
     var key ="fName";
+
     let Student = {
         fName:"Amar",
         lName:"Singh",
@@ -263,7 +269,7 @@
     }
 
     console.log(Student);
-    console.log(Student.fName); // For Static value , when we know the key use .
+    console.log(Student.fName); // For Static value . when we know the key use .
     console.log(Student[key]);  //For Dynamic value of key  use []
 
     //Looping on Object
@@ -275,12 +281,14 @@
         console.log(x);
     }
     console.log("\n");
-    console.log("Keys + Value of Object");
 
+    console.log("Keys + Value of Object");
     for(let x in Student)
     {
         console.log(x,Student[x]);
     }
+
+
 
     console.log("\n");
 
@@ -300,6 +308,7 @@
     }
 
     console.log("\n");
+
     var jnam = "Parth";
     for(let y in jnam)
     {
@@ -371,7 +380,7 @@
             // ow++ //if we need to write ow++ below console statement
             continue;
         }  
-        console.log(ow);
+        console.log(ow); //5 will not print.
 
       // ow++; // will give infinite loop condition   
     }
