@@ -51,6 +51,8 @@
 
         console.log(greetingmsg("Karan",message));
 
+        console.log("\n");
+
        //function as a variable.
 
        function add(a,b)
@@ -62,6 +64,7 @@
        {
         let result = add(20,30)+10+20;
         document.getElementById("pId").innerHTML= "Total amount is "+result;
+        console.log(result); //80
        // document.getElementById("pId").innerHTML= "Total amount is "+add(20,30);
       
        }
@@ -74,12 +77,12 @@
        var str = 'I am ajeet kumar';
        var result = str.indexOf('ajeet kumar');
 
-       console.log(result);
+       console.log(result); //5
 
-       console.log(str.indexOf('ajeet singh'));
+       console.log(str.indexOf('ajeet singh')); //-1
 
        var str1 = "Aman I am aman kumar";
-       console.log(str1.indexOf('kumar'));
+       console.log(str1.indexOf('kumar'));  //15
 
        console.log("\n");
 
@@ -94,7 +97,7 @@
        var ans = str3.indexOf('ajeet');  //0  first matching
        console.log(ans);
 
-       var bns = str3.lastIndexOf('ajeet');  //11  last matching
+       var bns = str3.lastIndexOf('ajeet');  //11  last matching  //array.indexOf(item, start)
        console.log(bns);
 
        var str4 = "ajeet I am ajeet kumar";
@@ -114,6 +117,21 @@
        console.log("\n");
 
        // substr()      slice()      substring()    
+
+        /*slice()
+
+        The slice() method returns selected elements in an array, as a new array.
+        The slice() method selects from a given start, up to a (not inclusive) given end.
+        The slice() method does not change the original array.
+
+        array.slice(start, end)
+
+        start	Optional => Start position. Default is 0. Negative numbers select from the end of the array. 
+        end	Optional. End position. Default is last element. Negative numbers select from the end of the array.
+
+        */
+
+
       
        var stra = "Ajeet, Chandan, Pawan, Samir";
        var result1 = stra.slice();
@@ -130,6 +148,18 @@
        console.log(stra.slice(7,2)); //nothing will come
 
        console.log("\n");
+
+
+      
+     /* substring()
+     
+     The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.
+     The substring() method extracts characters from start to end (exclusive).
+     The substring() method does not change the original string.
+     If start is greater than end, arguments are swapped: (4, 1) = (1, 4).
+     Start or end values less than 0, are treated as 0
+     
+     */ 
 
        var strb = "Ajeet, Chandan, Pawan, Samir";
 
@@ -149,13 +179,37 @@
 
        console.log(resultc);  //Pawan
 
-       var resultd = strb.slice(-12,-7);  
+       var resultd = strb.substring(-12);  
 
-      console.log(resultd);//Pawan
+      console.log(resultd);//Ajeet, Chandan, Pawan, Samir
 
       // negative index not supported by substring
 
       console.log("\n");
+
+
+     /*
+     
+     The substr() method extracts a part of a string.
+     The substr() method begins at a specified position, and returns a specified number of characters.
+     The substr() method does not change the original string.
+     To extract characters from the end of the string, use a negative start position.
+     
+     string.substr(start, length)
+
+
+     start	Required.
+      The start position.First character is at index 0.
+      If start is greater than the length, substr() returns "".
+      If start is negative, substr() counts from the end of the string.
+
+      length	Optional.
+        The number of characters to extract.
+        If omitted, it extracts the rest of the string
+
+     */
+
+
 
       console.log("substr examples");
 
@@ -163,11 +217,11 @@
 
       var resulte = strc.substr();
 
-      console.log(resulte);
+      console.log(resulte);  //Ajeet, Chandan, Pawan, Samir
 
       var resultf = strc.substr();
 
-      console.log(resultf);
+      console.log(resultf);  //Ajeet, Chandan, Pawan, Samir
 
       var resultg = strc.substr(7);
 
@@ -181,7 +235,7 @@
      
      var resulti = strc.substr(7,6);
 
-     console.log(resulti);
+     console.log(resulti); //Chanda
 
 
      var resultj = strc.substr(0,strc.length);
