@@ -15,11 +15,46 @@
             text-transform: uppercase;
           "
         >
-          Learning JavaScript
+          Learning JavaScript 7
         </h2>
+    </div>
+
+    <div id="divId">
+
+    </div>
+
+
+      <br>
+
+      <div id="adivId">
+
       </div>
 
-      <div id="divId">
+        <br>
+      <div id="bdivId">
+
+      </div>
+
+        <br>
+
+      <div id="cdivId">
+
+      </div>
+        <br>
+
+      <div id="ddivId">
+
+      </div>
+
+      <div id="edivId">
+
+      </div>
+
+      <div id="fdivId">
+
+      </div>
+
+      <div id="gdivId">
 
       </div>
 
@@ -53,6 +88,8 @@
        console.log(mixedarray[0]);  //for finding the first element.
        console.log(mixedarray[mixedarray.length-1]); //for finding last element
 
+       //Length of array = index+1
+
        console.log("Nested array length ="+mixedarray[7].length); 
        
        console.log(mixedarray[7][3]);
@@ -70,6 +107,8 @@
        names[names.length-1]="";
        console.log(names);
        console.log(typeof names);  //Output = Object
+
+       console.log(typeof null);  //Output = Object
 
        console.log("\n");
 
@@ -112,7 +151,7 @@
 
       console.log("\n");
 
-      console.log(nam1 instanceof Array);  //To check that given variable is Array or object
+      console.log(nam1 instanceof Array); //O/P=true //To check that given variable is Array or object
 
       console.log(Students instanceof Array);  //false
 
@@ -137,57 +176,60 @@
       {
         console.log(i,mane[i]);
       }
-
       document.getElementById('divId').innerHTML = "Ajeet";
 
-      var str = "<ul>";
-      
+
+      var astr = "<ul>";
       for(let i=0;i<mane.length;i++)
       {
-        str = str + "<li>"+mane[i]+"</li>";
+        astr = astr + "<li>"+mane[i]+"</li>";
       }
+      astr = astr+ "</ul>";
+      document.getElementById('adivId').innerHTML = astr;
 
 
-      str = str+ "</ul>";
 
-      document.getElementById('divId').innerHTML = str;
 
       // For of loop
 
       var sane = ["Rama","Shyama","Rana","Tarun"];
-      var str = "<ul>";
+      var bstr = "<ul>";
       for(let val of sane)
       {
-        str = str + "<li>"+val+"</li>";
+        bstr = bstr + "<li>"+val+"</li>";
       }
-      str = str+ "</ul>";
-      document.getElementById('divId').innerHTML = str;
+      bstr = bstr+ "</ul>";
+      document.getElementById('bdivId').innerHTML = bstr;
 
       console.log("\n");
+
+
 
       //For in loop
       var tane = ["Kavita","Sita","Rani","Gita"];
-      var str = "<ul>";
+      var cstr = "<ul>";
       for(let index in tane)
       {
-        str = str + "<li>"+tane[index]+"</li>";
+        cstr = cstr + "<li>"+tane[index]+ " " + index + "</li>";
       }
-      str = str+ "</ul>";
-      document.getElementById('divId').innerHTML = str;
+      cstr = cstr+ "</ul>";
+      document.getElementById('cdivId').innerHTML = cstr;
 
       console.log("\n");
+
+
 
       //for each
       var kane = ["Rahul","Kamal","Car","Cheer"];
 
-      var str = "<ul>";
+      var dstr = "<ul>";
       kane.forEach(function myFun(val)
       {
-        str = str + "<li>"+val+"</li>";
+        dstr = dstr + "<li>"+val+"</li>";
 
       })
      
-      document.getElementById('divId').innerHTML = str;
+      document.getElementById('ddivId').innerHTML = dstr;
 
       //Output
       // Rahul
@@ -195,37 +237,42 @@
       // Car
       // Cheer
 
+
+
       console.log("\n");
 
       var kane = ["Chani","Sister","Bus","Gun"];
 
-      var str = "<ul>";
+      var estr = "<ul>";
       kane.forEach(function myFun(val,index)
       {
-        str = str + "<li>"+index+"</li>";
+        estr = estr + "<li>"+val+" "+index+"</li>";
 
       })
 
-      document.getElementById('divId').innerHTML = str;
+      document.getElementById('edivId').innerHTML = estr;
        
       //Output
-      // 0
-      // 1
-      // 2
-      // 3
+      //Chani 0
+      // Sister 1
+      // Bus 2
+      // Gun 3
+      
+
+
 
       console.log("\n");
 
       var oane = ["Sunny","Bunny","Tunny","Pooja"];
 
-      var str = "<ul>";
+      var fstr = "<ul>";
       oane.forEach(function myFun(val,index,arr)
       {
-        str = str + "<li>"+arr[index]+"</li>";
+        fstr = fstr + "<li>"+arr[index]+"</li>";
 
       })
 
-      document.getElementById('divId').innerHTML = str;
+      document.getElementById('fdivId').innerHTML = fstr;
 
       // Output
       // ======
@@ -237,6 +284,9 @@
       //first parameter = value  //Ex oane ka element
       //second parameter = index
       //third parameter = arr  //full array
+
+
+
 
 
       var umane = ["Ajeet","Samir","Chandra","Pawan"];
@@ -257,6 +307,8 @@
       console.log(qane);
 
       //unshift
+      // The unshift() method adds new elements to the beginning of an array.
+      // The unshift() method overwrites the original array.
 
       qane.unshift("Uama");
 
@@ -293,6 +345,16 @@
       //   console.log(count);
       //   count++;
       // }
+
+      console.log("\n");
+      
+      var tarr = ["Abhishek","Ankit","Anshul","Arpit","Akshat","Ayush","Rohan"];
+
+      tarr.forEach((val,ind,arr)=>{
+        console.log(val);
+        console.log(ind);
+        console.log(arr);
+      })
    
     </script>
 
