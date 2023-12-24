@@ -32,7 +32,7 @@
 
         console.log(student);
         console.log(student.id);
-        console.log(student['Mobile No']);
+        console.log(student['Mobile No']);  //<--------------- Another way of accessing object property
 
         console.log("\n");
 
@@ -111,14 +111,14 @@
 
        function addi(a,b)
        {
-          console.log(a);
-          console.log(b);
-          console.log(a+b);
+          console.log(a); // Output = 11 
+          console.log(b); //undefined 
+          console.log(a+b); //NaN {Not a Number} 
        }
 
        addi(20,30,40,50,60);  //extra arguments ignored
 
-       addi(11); // Output = 11 undefined NaN{Not a Number}
+       addi(11); // Output = 11 
 
        console.log("\n");
 
@@ -199,9 +199,11 @@
     {
         console.log(a);
         console.log(b);
-        console.log(input);
+        console.log(input); //[3, 4, 5, 6, 7, 8, 9, 10]
         //let sum=0;
-        input.push(100); // Note:- push() not supported in case of argument
+        
+        input.push(100); 
+        console.log(input);//[3, 4, 5, 6, 7, 8, 9, 10, 100]
 
         let sum=a+b;
         for(let val of input)
@@ -209,10 +211,10 @@
           sum+=val;
         }
 
-        console.log(sum);
+        console.log(sum); //total = 155
     }
 
-    restfun(1,2,3,4,5,6,7,8,9,10);  //total = 55
+    restfun(1,2,3,4,5,6,7,8,9,10);  
 
     //Note:- rest parameter always be last parameter
     // rest is pure array.
