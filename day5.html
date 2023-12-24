@@ -22,17 +22,16 @@
     <script>
         var age =20;
         console.log(age);
-
         var _age=30;
         console.log(_age);
-
         var $age=40;
         console.log($age);
+        var zz;
+        console.log(zz);  //undefined
+
 
         console.log("\n");
 
-        var zz;
-        console.log(zz);  //undefined
 
         var agg;
         agg=10;
@@ -50,6 +49,8 @@
 
         console.log(agt);
 
+
+        
         console.log("\n");
 
         //For comparing value we write
@@ -61,8 +62,8 @@
        console.log(name);
        console.log(address);
 
-       /*
-       
+       console.log("\n");
+
        var age =1;
        age = 2;
        console.log(age);   //Here, we are reassigning value to age
@@ -71,16 +72,14 @@
        var age = 5;
        console.log(age);  //Here, we are redeclaring age variable two times with different values 
 
-       */
- 
        var ay;
        console.log(ay); //undefined
        ay = 13;
 
        console.log("\n");
        
-       //console.log(by); //Error = Uncaught ReferenceError: by is not defined
-       //by=14; 
+      //  console.log(by); //Error = Uncaught ReferenceError: by is not defined
+      //  by=14; 
 
       // console.log(az);  //Error =  Cannot access 'az' before initialization
       // let az=17;
@@ -88,24 +87,26 @@
 
       //************************
 
-      /*
-
-      console.log(bb);
-      var bb;
-      bb = 11;
       
-      Here we will not get any error we simply get undefined
-      
-      */
 
-     // let bge = 10;
-     // var bge = 20;
-     // console.log(bge); //Uncaught SyntaxError: Identifier 'bge' has already been declared
+      // console.log(bb);
+      // var bb;
+      // bb = 11;
+      // //Here we will not get any error we simply get undefined
+       console.log("\n");
+
+
+
+   //   let bge = 10;
+   //   var bge = 20;
+   //   console.log(bge); //Uncaught SyntaxError: Identifier 'bge' has already been declared
+
 
 
     // var cge = 10;
     // let cge = 28;
     // console.log(cge);  //Uncaught SyntaxError: Identifier 'cge' has already been declared 
+
 
     var data = "Jim";
     data = 16;
@@ -142,6 +143,8 @@
 
      message();
 
+     console.log("\n");
+
      function msg(isShow)
      {
         if(isShow == true)
@@ -156,6 +159,11 @@
 
      msg(true);
 
+    
+    
+    
+     console.log("\n");
+
      function msgg(isShow1)
      {
         if(isShow1 == true)
@@ -169,6 +177,10 @@
     }
 
      msgg(false);
+
+
+
+
 
      console.log("\n");
 
@@ -209,6 +221,8 @@
 
      show(true);
 
+
+
      console.log("\n");
 
      for(var i=1;i<=10;i++)
@@ -218,10 +232,13 @@
 
      console.log(i); // Output = 11 
 
+
+
      // Note : for(const i=1;i<=10;i++)  //Will give error, because value of i will change
 
      console.log("\n");
 
+     
      const nt = ["AKK","MK"]; //No Error, because we are not reassigning the value to const variable.
 
      nt.push("PTW");
@@ -247,24 +264,16 @@
 
      console.log(obj1);
 
+    console.log("\n");
+
+    var mynu = null;
+    console.log(typeof mynu);  //Output = Object
+
+    var mya;
+    console.log(typeof mya);  // Output = undefined
 
     </script>
     
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
