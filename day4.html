@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning JavaScript 4</title>
   </head>
+
   <body>
+  
     <div style="text-align: center">
       <h2
         style="
@@ -18,6 +21,7 @@
       </h2>
     </div>
 
+  
     <p id="pId">Hello TechWorld</p>
     <p id="pId2"><b>  Hello NanoWorld  </b></p>
 
@@ -59,6 +63,8 @@
     <script>
 
       function funInnerHTML() {
+        //for html.
+
         console.log(document.getElementById("pId").innerHTML);
         console.log(document.getElementById("pId2").innerHTML); // O/P --> <b>Hello NanoWorld</b>
 
@@ -66,9 +72,17 @@
           document.getElementById("pId2").innerHTML;
 
         //Note:- getElementsByTagName()  returns collection so without index code will not work.
+
+        //Output
+        //Hello TechWorld
+        //<b>  Hello NanoWorld  </b>
       }
 
+
+
       function funInnerText() {
+        //for only text.
+
         console.log(document.getElementById("pId").innerText);
         console.log(document.getElementById("pId2").innerText);
 
@@ -77,16 +91,27 @@
 
         document.getElementsByTagName("span")[0].innerText =
           document.getElementById("pId2").innerText;
+
+          //Hello TechWorld
+          //Hello NanoWorld
       }
+
+
 
      function funTextContent()
       {
         console.log(document.getElementById("pId").textContent);
         console.log(document.getElementById("pId2").textContent);
+        //below line of code will also add space as it is.
         document.getElementsByTagName("span")[0].textContent = document.getElementById("pId2").textContent;
-          
+
+        //Output
+          //Hello TechWorld
+          //   Hello NanoWorld  
       }
 
+      
+      
       function funOuterHTML()
       {
         console.log(document.getElementById("pId").outerHTML);
@@ -95,7 +120,16 @@
       //  document.getElementById("divId").outerHTML = document.getElementsByTagName("span")[0].innerHTML; 
         
         document.getElementById("divId").outerHTML = document.getElementById("pId2").innerHTML;
+
+        //Output
+
+        //<p id="pId">Hello TechWorld</p>
+        //<p id="pId2"><b>  Hello NanoWorld  </b></p>
       }
+
+
+
+
 
       function funOuterText()
       {
@@ -105,8 +139,17 @@
        // document.getElementById("pId2").outerText = "Hi Yogi"; //this will remove paragraph pId2 and put our string.
 
        document.getElementById("pId2").innerText="Hi Poland!!";
+
+       //Output
+
+       //Hello TechWorld
+       //Hello NanoWorld
       
       }
+
+
+
+
 
       function changeAttr()
       {
@@ -115,42 +158,45 @@
       }
 
 
+
+
       var A=20,B=10;
       A++;
-
       console.log(A);
       A--;
       console.log(A);
       
       A>B?console.log("A is greater than B"):A<B?console.log("A is less than B"):console.log("A==B");            
 
+
+
      
       var myName = "Om";
-
       console.log(typeof myName);
-
       console.log(typeof(myName)); //myName=""  give string
+
 
       var myvar = null; //if we want to put object in myvar
 
       console.log(myvar); // Output = object
 
+
+
       var nn = {
         id:45
       }
-
       console.log(typeof(nn));  // Output = Object
 
-      var arr = [10,20,30];
 
+      var arr = [10,20,30];
       console.log(typeof(arr)); // Output = Object
 
-      //Array typeof = object
 
+      //Array typeof = object
       var fn = "Aman";
       var ln = "Sharma";
-
       console.log(fn.concat(' ',ln));
+
 
       function fullName(firstName,lastName)
       {
@@ -180,7 +226,7 @@
 
       function Add()
       {
-        debugger;
+       // debugger;
 
         var aa=10, bb=20;
 
@@ -202,11 +248,4 @@
 
   </body>
 </html>
-
-
-
-
-
-
-
 
