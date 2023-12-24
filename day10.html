@@ -22,6 +22,8 @@
       <button type="button" onclick="funNext()">Go To About Us Page</button> &nbsp; &nbsp;
       <button type="button" onclick="funForward()">Forward</button>
 
+
+
     <script>
 
       function funNext()
@@ -68,7 +70,8 @@
      
      console.log(ens); //Ajeet,Chandan,Pawan,Samir
 
-    var dtr = "Ajeet,Chandan,Pawan,Samir,Chandan";
+    var dtr = "Ajeet,Chandan,Pawan,Samir,Chandan";//<------- 2 times Chandan
+
     var fns = dtr.replace("Chandan","Rita");
     console.log(fns); //Ajeet,Rita,Pawan,Samir,Chandan {first matching will get replaced.}
 
@@ -178,6 +181,11 @@
    console.log("\n");
 
    console.log("Converting String to an Array");
+
+  //  The split() method splits a string into an array of substrings.
+  //   The split() method returns the new array.
+  //   The split() method does not change the original string.
+  //   If (" ") is used as separator, the string is split between words.
 
    console.log("split()");
 
